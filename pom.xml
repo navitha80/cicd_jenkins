@@ -27,27 +27,21 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
+				<version>3.5.1</version>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>7.9.0</muleVersion>
+						<username>navitha_work1</username>
+						<password>Absyz@123</password>
+						<applicationName>cicd_jenkins</applicationName>
+						<businessGroup>VBA</businessGroup>
+						<environment>sandbox</environment>
+						<workers>1</workers>
+						<objectStoreV2>true</objectStoreV2>
+					</cloudHubDeployment>
+				</configuration>
 			</plugin>
-			<plugin>
-            <groupId>org.mule.tools.maven</groupId>
-            <artifactId>mule-maven-plugin</artifactId>
-            <version>2.3.2</version>
-            <configuration>
-		        <cloudHubDeployment>
-		            <uri>https://anypoint.mulesoft.com</uri>
-		            <muleVersion>7.9.0</muleVersion>
-		            <username>navitha_work1</username>
-		            <password>Absyz@123</password>
-		            <applicationName>cicd_jenkins</applicationName>
-		            <businessGroup>VBA</businessGroup>
-		            <environment>sandbox</environment>
-		            <workers>1</workers>
-                    <objectStoreV2>true</objectStoreV2>
-		        </cloudHubDeployment>
-		    </configuration>
-                    </plugin>
 
 		</plugins>
 	</build>

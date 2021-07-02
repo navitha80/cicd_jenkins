@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd"></mule>
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="fc9fbeb5-4ee5-4784-b4f4-45e3a120a575" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<http:listener-config name="HTTP_Listener_config1" doc:name="HTTP Listener config" doc:id="98aae779-0b9b-42e6-b435-865540dc0be7" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="cicd_jenkinsFlow" doc:id="64018616-cb98-43f6-b9b1-36b3280a59a5" >
+		<http:listener doc:name="Listener" doc:id="c1e02677-1e4c-4843-8e9b-e6e29bc72beb" config-ref="HTTP_Listener_config" path="/cicd_jenkins"/>
+		<logger level="INFO" doc:name="Logger" doc:id="2a28a956-d753-412a-a88a-d06e7367baca" message="checking jenkin deploment"/>
+	</flow>
+</mule>
